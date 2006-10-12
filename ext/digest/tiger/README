@@ -10,6 +10,10 @@ More information about Tiger:
 http://en.wikipedia.org/wiki/Tiger_%28hash%29
 http://www.cs.technion.ac.il/~biham/Reports/Tiger/
 
+== Requirements
+
+- Ruby 1.8.5 as of 2006-10-12 or later
+
 == License
 
 tiger.c:

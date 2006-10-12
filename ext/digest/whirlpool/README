@@ -13,6 +13,10 @@ http://planeta.terra.com.br/informatica/paulobarreto/WhirlpoolPage.html
 The C code is based on the sample implementation, as available on the
 mentioned website.
 
+== Requirements
+
+- Ruby 1.8.5 as of 2006-10-12 or later
+
 == License
 
 whirlpool-algorithm.c:
