@@ -13,12 +13,14 @@
 #include "digest.h"
 #include "tiger.h"
 
-static algo_t tiger = {
+static rb_digest_metadata_t tiger = {
+    RUBY_DIGEST_API_VERSION,
     TIGER_DIGEST_LENGTH,
+    TIGER_BLOCK_LENGTH,
     sizeof(tiger_state_t),
-    (hash_init_func_t)tiger_init,
-    (hash_update_func_t)tiger_update,
-    (hash_finish_func_t)tiger_final,
+    (rb_digest_hash_init_func_t)tiger_init,
+    (rb_digest_hash_update_func_t)tiger_update,
+    (rb_digest_hash_finish_func_t)tiger_final,
 };
 
 void

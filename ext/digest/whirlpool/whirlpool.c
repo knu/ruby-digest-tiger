@@ -16,12 +16,14 @@
 
 static void WP_Update(WP_Struct * const, const unsigned char * const, size_t);
 
-static algo_t whirlpool = {
+static rb_digest_metadata_t whirlpool = {
+    RUBY_DIGEST_API_VERSION,
     WP_DIGEST_SIZE,
+    WBLOCKBYTES, 
     sizeof(WP_Struct),
-    (hash_init_func_t)WP_Init,
-    (hash_update_func_t)WP_Update,
-    (hash_finish_func_t)WP_Finalize,
+    (rb_digest_hash_init_func_t)WP_Init,
+    (rb_digest_hash_update_func_t)WP_Update,
+    (rb_digest_hash_finish_func_t)WP_Finalize,
 };
 
 static void
