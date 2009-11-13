@@ -1,9 +1,9 @@
 require 'test/unit'
 
 begin
-  require 'rubygems'
-  require_gem 'digest-tiger'
+  require 'digest/tiger'
 rescue LoadError
+  require 'rubygems'
   require 'digest/tiger'
 end
 
