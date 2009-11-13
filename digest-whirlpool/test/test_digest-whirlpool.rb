@@ -1,9 +1,9 @@
 require 'test/unit'
 
 begin
-  require 'rubygems'
-  require_gem 'digest-whirlpool'
+  require 'digest/whirlpool'
 rescue LoadError
+  require 'rubygems'
   require 'digest/whirlpool'
 end
 
