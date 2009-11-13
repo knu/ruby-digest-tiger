@@ -1,0 +1,36 @@
+= Digest::Tiger - Ruby interface to the Tiger message digest algorithm
+
+== Summary
+
+Digest::Tiger is a Ruby library for calculating message digests using
+the Tiger algorithm.  The library interface corforms to the standard
+Digest API.
+
+More information about Tiger:
+http://en.wikipedia.org/wiki/Tiger_%28hash%29
+http://www.cs.technion.ac.il/~biham/Reports/Tiger/
+
+== Requirements
+
+- Ruby 1.8.5 as of 2006-10-12 or later
+
+== License
+
+tiger.c:
+tiger.h:
+
+  These are based on the reference implementation found on the
+  official website mentioned above, which website says:
+
+    Tiger has no usage restrictions nor patents. It can be used
+    freely, with the reference implementation, with other
+    implementations or with a modification to the reference
+    implementation (as long as it still implements Tiger). We only ask
+    you to let us know about your implementation and to cite the
+    origin of Tiger and of the reference implementation.
+
+For the rest:
+
+  You can redistribute and/or modify it under the same terms as Ruby.
+
+    Copyright (c) 2006 Akinori MUSHA <knu@iDaemons.org>
