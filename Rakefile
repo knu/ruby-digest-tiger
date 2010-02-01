@@ -13,8 +13,7 @@ The size of a Tiger hash value is 192 bits.
     gem.email = "knu@idaemons.org"
     gem.homepage = "http://github.com/knu/ruby-digest-extra"
     gem.authors = ["Akinori MUSHA"]
-    gem.extensions = FileList["ext/**/extconf.rb"].to_a
-    gem.files = FileList["ext/**/*"].to_a
+    gem.extensions.concat FileList["ext/**/extconf.rb"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional set
   end
   Jeweler::GemcutterTasks.new
