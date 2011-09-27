@@ -1,5 +1,3 @@
-# $Id$
-
 require 'mkmf'
 
 $defs << "-DHAVE_CONFIG_H"

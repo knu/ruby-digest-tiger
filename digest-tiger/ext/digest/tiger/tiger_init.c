@@ -2,11 +2,7 @@
 
   tiger_init.c - provides Digest::Tiger class
 
-  $Author$
-
   Copyright (C) 2006 Akinori MUSHA
-
-  $Id$
 
 ************************************************/
 

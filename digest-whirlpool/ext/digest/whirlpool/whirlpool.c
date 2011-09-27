@@ -2,11 +2,7 @@
 
   whirlpool.c - provides Digest::Whirlpool class
 
-  $Author$
-
   Copyright (C) 2006 Akinori MUSHA
-
-  $Id$
 
 ************************************************/
 
