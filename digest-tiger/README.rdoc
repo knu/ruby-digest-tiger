@@ -3,7 +3,7 @@
 == Summary
 
 Digest::Tiger is a Ruby library for calculating message digests using
-the Tiger algorithm.  The library interface corforms to the standard
+the Tiger algorithm.  The library interface conforms to the standard
 Digest API.
 
 More information about Tiger:

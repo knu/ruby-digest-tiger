@@ -1,56 +1,26 @@
-require 'rubygems'
-require 'rake'
+require 'bundler/gem_tasks'
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "digest-tiger"
-    gem.summary = %Q{A Digest module implementing the Tiger hashing algorithm}
-    gem.description = <<-EOS
-This is a Digest module implementing the Tiger hashing algorithm.
-The size of a Tiger hash value is 192 bits.
-    EOS
-    gem.email = "knu@idaemons.org"
-    gem.homepage = "http://github.com/knu/ruby-digest-extra"
-    gem.authors = ["Akinori MUSHA"]
-    gem.extensions.concat FileList["ext/**/extconf.rb"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional set
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
-end
+gemspec = Bundler::GemHelper.gemspec
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.libs << 'test'
+  test.test_files = gemspec.test_files
   test.verbose = true
 end
 
-begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/test_*.rb'
-    test.verbose = true
-  end
-rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
-  end
+require 'rake/extensiontask'
+Rake::ExtensionTask.new('tiger', gemspec) do |ext|
+  ext.ext_dir = 'ext/digest/tiger'
+  ext.lib_dir = 'lib/digest'
 end
 
-task :test => :check_dependencies
-
-task :default => :test
-
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "digest-tiger #{version}"
-  rdoc.rdoc_files.include('README*')
+  rdoc.title = "#{gemspec.name} #{gemspec.version}"
+  rdoc.rdoc_files.include(gemspec.extra_rdoc_files)
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+task :default => :test
