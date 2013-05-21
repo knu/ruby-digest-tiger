@@ -2,11 +2,15 @@
 
   whirlpool.c - provides Digest::Whirlpool class
 
-  Copyright (C) 2006 Akinori MUSHA
+  Copyright (C) 2006-2013 Akinori MUSHA
 
 ************************************************/
 
+#ifdef HAVE_RUBY_DIGEST_H
+#include "ruby/digest.h"
+#else
 #include "digest.h"
+#endif
 #include "whirlpool-algorithm.h"
 #include "whirlpool-portability.h"
 
