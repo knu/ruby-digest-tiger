@@ -2,11 +2,15 @@
 
   tiger_init.c - provides Digest::Tiger class
 
-  Copyright (C) 2006 Akinori MUSHA
+  Copyright (C) 2006-2013 Akinori MUSHA
 
 ************************************************/
 
+#ifdef HAVE_RUBY_DIGEST_H
+#include "ruby/digest.h"
+#else
 #include "digest.h"
+#endif
 #include "tiger.h"
 
 static rb_digest_metadata_t tiger = {
