@@ -3,7 +3,7 @@
 == Summary
 
 Digest::Whirlpool is a Ruby library for calculating message digests
-using the Whirlpool algorithm.  The library interface corforms to the
+using the Whirlpool algorithm.  The library interface conforms to the
 standard Digest API.
 
 More information about Whirlpool:

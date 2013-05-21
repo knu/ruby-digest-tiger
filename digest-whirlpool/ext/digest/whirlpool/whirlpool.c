@@ -19,7 +19,7 @@ static void WP_Update(WP_Struct * const, const unsigned char * const, size_t);
 static rb_digest_metadata_t whirlpool = {
     RUBY_DIGEST_API_VERSION,
     WP_DIGEST_SIZE,
-    WBLOCKBYTES, 
+    WBLOCKBYTES,
     sizeof(WP_Struct),
     (rb_digest_hash_init_func_t)WP_Init,
     (rb_digest_hash_update_func_t)WP_Update,
