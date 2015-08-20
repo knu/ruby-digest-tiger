@@ -19,6 +19,7 @@ The size of a Tiger hash value is 192 bits.
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.extensions    = ["ext/digest/tiger/extconf.rb"]
+  spec.required_ruby_version = "~> 2.2"
 
   spec.extra_rdoc_files = [
     "LICENSE",
