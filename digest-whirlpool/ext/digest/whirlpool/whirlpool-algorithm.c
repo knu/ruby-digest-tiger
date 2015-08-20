@@ -269,7 +269,7 @@ WP_Create() {
 	return wp;
 }
 
-void
+int
 WP_Init(WP_Struct *wp) {
 	int i;
 
@@ -279,6 +279,7 @@ WP_Init(WP_Struct *wp) {
 	for (i = 0; i < 8; i++) {
 		wp->hash[i] = 0L; /* initial value */
 	}
+	return 1;
 }
 
 void WP_Add(const unsigned char * const source,
@@ -398,7 +399,7 @@ void WP_Add(const unsigned char * const source,
     structpointer->bufferPos    = bufferPos;
 }
 
-void WP_Finalize(WP_Struct * const structpointer,
+int WP_Finalize(WP_Struct * const structpointer,
                     unsigned char * const result) {
     int i;
     u8 *buffer      = structpointer->buffer;
@@ -460,6 +461,8 @@ void WP_Finalize(WP_Struct * const structpointer,
     }
     structpointer->bufferBits   = bufferBits;
     structpointer->bufferPos    = bufferPos;
+
+    return 1;
 }
 
 void

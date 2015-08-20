@@ -43,7 +43,7 @@ WP_Struct *WP_Create();
  * @param wp  A WP_Struct handle, as created by WP_Create()
  * @require   wp != NULL
  */
-void       WP_Init(WP_Struct *wp);
+int       WP_Init(WP_Struct *wp);
 
 /**
  * Delivers input data to the hashing algorithm.
@@ -67,8 +67,8 @@ void       WP_Add(const unsigned char * const source,
  *     result != NULL
  *     result must be able to hold at least WP_DIGEST_SIZE bytes.
  */
-void       WP_Finalize(WP_Struct * const wp,
-                       unsigned char * const result);
+int       WP_Finalize(WP_Struct * const wp,
+                      unsigned char * const result);
 
 /**
  * Free a created WP_Struct handle.

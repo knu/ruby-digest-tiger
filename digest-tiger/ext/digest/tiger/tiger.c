@@ -650,7 +650,7 @@ void tiger_compress(uint64_t *str, uint64_t state[3])
     tiger_compress_macro(((uint64_t*)str), ((uint64_t*)state))
 #endif
 
-void
+int
 tiger_init(tiger_state_t *ctx)
 {
     ctx->state[0] = 0x0123456789ABCDEFLL;
@@ -658,6 +658,8 @@ tiger_init(tiger_state_t *ctx)
     ctx->state[2] = 0xF096A5B4C3B2E187LL;
     ctx->len      = 0;
     ctx->remlen   = 0;
+
+    return 1;
 }
 
 void
@@ -689,7 +691,7 @@ tiger_update(tiger_state_t *ctx, uint8_t *str, uint32_t length)
     }
 }
 
-void
+int
 tiger_final(tiger_state_t *ctx, uint8_t *result)
 {
     uint32_t i, j;
@@ -728,4 +730,6 @@ tiger_final(tiger_state_t *ctx, uint8_t *result)
     tiger_compress(((uint64_t*)temp), ctx->state);
 
     memcpy(result, ctx->state, sizeof(ctx->state));
+
+    return 1;
 }

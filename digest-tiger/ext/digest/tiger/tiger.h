@@ -47,6 +47,6 @@ typedef struct {
 #define TIGER_DIGEST_LENGTH	( 3 * sizeof(uint64_t))
 #define TIGER_BLOCK_LENGTH	(64 * sizeof(uint8_t))
 
-void tiger_init(tiger_state_t *ctx);
+int tiger_init(tiger_state_t *ctx);
 void tiger_update(tiger_state_t *ctx, uint8_t *str, uint32_t length);
-void tiger_final(tiger_state_t *ctx, uint8_t *result);
+int tiger_final(tiger_state_t *ctx, uint8_t *result);
