@@ -1,5 +1,5 @@
 module Digest
-  class Tiger
+  class Tiger < Digest::Base
     VERSION = "1.0.2"
   end
 end
