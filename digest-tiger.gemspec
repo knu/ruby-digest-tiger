@@ -13,7 +13,7 @@ The size of a Tiger hash value is 192 bits.
 }
   spec.summary       = %q{A Digest module implementing the Tiger hashing algorithm}
   spec.homepage      = "https://github.com/knu/ruby-digest-extra"
-  spec.license       = "BSD"
+  spec.license       = "BSD-2-Clause"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -23,7 +23,7 @@ The size of a Tiger hash value is 192 bits.
 
   spec.extra_rdoc_files = [
     "LICENSE",
-    "README.rdoc"
+    "README.md"
   ]
 
   spec.add_development_dependency "bundler", "~> 1.3"
