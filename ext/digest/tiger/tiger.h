@@ -35,7 +35,7 @@ typedef unsigned LONG_LONG uint64_t;
 /* Three passes are recommended.                       */
 /* Use four passes when you need extra security.       */
 /* Must be at least three.                             */
-#define PASSES 3
+#define PASSES 4
 
 typedef struct {
     uint64_t state[3];
