@@ -1,4 +1,4 @@
 tiger.o: tiger.c tiger.h
 tiger_init.o: tiger.h \
-  $(hdrdir)/digest.h $(hdrdir)/ruby.h \
-  $(topdir)/config.h $(hdrdir)/defines.h $(hdrdir)/intern.h
+  $(hdrdir)/ruby/digest.h $(hdrdir)/ruby.h \
+  $(topdir)/config.h $(hdrdir)/ruby/defines.h $(hdrdir)/ruby/intern.h
